@@ -26,8 +26,8 @@ jobs:
         if: ${{ always() }}
         uses: ./.github/actions/log_to_splunk
         with:
-          splunk-url: ${{ secrets.HEC_URL }}
-          hec-token: ${{ secrets.HEC_TOKEN }}
+          splunk-url: http://34.213.134.166:8088/services/collector/raw #${{ secrets.HEC_URL }}
+          hec-token: 903aca4b-9bc1-4c93-9147-6463d6f3a00b #${{ secrets.HEC_TOKEN }}
           github-token: ${{ secrets.API_TOKEN }}
           workflowID: ${{ env.triggerID }}
           source: ${{ env.triggerJob }}
