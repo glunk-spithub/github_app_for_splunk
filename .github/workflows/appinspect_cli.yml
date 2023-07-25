@@ -56,3 +56,9 @@ jobs:
         uses: codeboten/github-action-to-otlp@v1
         with:
           endpoint: "20.163.240.115:4317"
+          
+      - name: Export Workflow Trace
+        if: always()
+        uses: inception-health/otel-export-trace-action@latest
+        with:
+          otlpEndpoint: grpc://a20.163.240.115:4317/
