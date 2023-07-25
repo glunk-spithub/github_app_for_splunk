@@ -61,4 +61,5 @@ jobs:
         if: always()
         uses: inception-health/otel-export-trace-action@latest
         with:
-          otlpEndpoint: grpc://a20.163.240.115:4317/
+          otlpEndpoint: grpc://20.163.240.115:4317/
+          otlpHeaders: "x-honeycomb-team=YOUR_API_KEY,x-honeycomb-dataset=YOUR_DATASET"
