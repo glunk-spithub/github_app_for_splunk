@@ -52,6 +52,7 @@ jobs:
           included_tags: cloud, splunk_appinspect
           
       - name: Send data to OTLP backend
+        if: always()
         uses: codeboten/github-action-to-otlp@v1
         with:
           endpoint: "20.163.240.115:4317"
