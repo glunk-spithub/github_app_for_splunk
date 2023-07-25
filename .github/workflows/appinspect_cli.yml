@@ -62,5 +62,5 @@ jobs:
         uses: inception-health/otel-export-trace-action@latest
         with:
           otlpEndpoint: grpc://20.163.240.115:4317/
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          githubToken: ${{ secrets.TOKEN_GITHUB }}
           runId: ${{ github.event.workflow_run.id }}
