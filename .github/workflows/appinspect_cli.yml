@@ -50,17 +50,3 @@ jobs:
         with:
           app_path: package.tar.gz
           included_tags: cloud, splunk_appinspect
-          
-      - name: Send data to OTLP backend
-        if: always()
-        uses: codeboten/github-action-to-otlp@v1
-        with:
-          endpoint: "20.163.240.115:4317"
-          
-      - name: Export Workflow Trace
-        if: always()
-        uses: inception-health/otel-export-trace-action@latest
-        with:
-          otlpEndpoint: grpc://20.163.240.115:4317/
-          githubToken: ${{ secrets.TOKEN_GITHUB }}
-          runId: ${{ github.event.workflow_run.id }}
