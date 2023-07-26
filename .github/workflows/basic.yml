@@ -9,6 +9,7 @@ jobs:
   otel-export-trace:
     name: OpenTelemetry Export Trace
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.name!='WriteLogs'}}
     steps:
       - name: Export Workflow Trace
         uses: inception-health/otel-export-trace-action@latest
