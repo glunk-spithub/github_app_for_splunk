@@ -12,8 +12,6 @@ jobs:
     if: ${{ github.event.workflow_run.name!='WriteLogs'}}
     steps:
       - name: Export Workflow Trace
-        env:
-          OTEL_CONSOLE_ONLY: false
         uses: inception-health/otel-export-trace-action@latest
         with:
           otlpEndpoint: https://dev.erkkila.co:8088/services/collector/raw?token=f07eca1b-5cb3-4d33-85b9-4255a472809d
