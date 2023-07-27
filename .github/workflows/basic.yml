@@ -16,7 +16,7 @@ jobs:
           OTEL_CONSOLE_ONLY: false
         uses: inception-health/otel-export-trace-action@latest
         with:
-          otlpEndpoint: http://20.163.240.115:9444/event1
+          otlpEndpoint: https://dev.erkkila.co:8088/services/collector/raw?token=f07eca1b-5cb3-4d33-85b9-4255a472809d
           otelServiceName: "GitHubWorkflows"
           githubToken: ${{ secrets.TOKEN_GITHUB }}
           runId: ${{ github.event.workflow_run.id }}
